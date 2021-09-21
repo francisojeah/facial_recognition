@@ -19,6 +19,7 @@ def getEncodings(imageslist):
     for i in imageslist:
         i = cv2.cvtColor(i, cv2.COLOR_BGR2RGB)
         i = cv2.resize(i, (0,0), None, 0.25,0.25)
+        faloc = face_recogniton.face_locations(i)[0]
         encode = face_recognition.face_encodings(i)[0]
         # d = face_recognition.face_locations(i)[0]
         # cv2.rectangle(i,(d[3],d[0]),(d[1],d[2]),(255,255,0),2)
